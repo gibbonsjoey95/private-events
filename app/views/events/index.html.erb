@@ -1,1 +1,7 @@
 <h1>These will be all of my bad ass events</h1>
+
+<ul>
+    <% @events.each do |event| %>
+        <li><%= event.name %></li>
+    <% end %>
+</ul>
