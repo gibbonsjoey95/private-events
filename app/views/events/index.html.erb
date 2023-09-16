@@ -1,7 +1,17 @@
-<h1>These will be all of my bad ass events</h1>
+<header>
+<h1>My Bad Ass Events</h1>
+</header>
 
+<section class="event-list">
 <ul>
-    <% @events.each do |event| %>
-        <li><%= event.name %></li>
-    <% end %>
+  <% @events.each do |event| %>
+    <li class="event-card">
+      <div class="event-details">
+        <h2 class="event-name"><%= event.name %></h2>
+        <p class="event-date">Date: <%= event.date.strftime('%B %d, %Y') %></p>
+        <p class="event-location">Location: <%= event.location %></p>
+      </div>
+    </li>
+  <% end %>
 </ul>
+</section>
