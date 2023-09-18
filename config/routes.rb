@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  get 'users/show'
   devise_for :users
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
 
-  get '/events', to: 'events#index', as: 'events'
+  resources :events, only: [:index, :new]
+  
   root 'events#index'
 
 

@@ -1,6 +1,16 @@
 <header>
 <h1>My Bad Ass Events</h1>
+
+<% if user_signed_in? %>
+  <%= link_to "New Event", new_event_path, class: "btn btn-primary"%>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger"%>
+<% else %>
+  <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary' %>
+  <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success' %>
+<% end %>
 </header>
+
+
 
 <section class="event-list">
 <ul>
